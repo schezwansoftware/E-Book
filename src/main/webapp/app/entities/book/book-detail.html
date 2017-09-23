@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="ebookApp.book.detail.title">Book</span> {{vm.book.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ebookApp.book.name">Name</span></dt>
+        <dd>
+            <span>{{vm.book.name}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.book.price">Price</span></dt>
+        <dd>
+            <span>{{vm.book.price}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.book.author">Author</span></dt>
+        <dd>
+            <span>{{vm.book.author}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.book.released_date">Released Date</span></dt>
+        <dd>
+            <span>{{vm.book.released_date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.book.added_date">Added Date</span></dt>
+        <dd>
+            <span>{{vm.book.added_date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.book.ratings">Ratings</span></dt>
+        <dd>
+            <span>{{vm.book.ratings}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.book.description">Description</span></dt>
+        <dd>
+            <span>{{vm.book.description}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="book-detail.edit({id:vm.book.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

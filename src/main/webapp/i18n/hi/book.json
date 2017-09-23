@@ -1,0 +1,27 @@
+{
+    "ebookApp": {
+        "book" : {
+            "home": {
+                "title": "Books",
+                "createLabel": "नया Book बनाएँ",
+                "createOrEditLabel": "Book बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Book [identifier: {{ param }}] तैयार है",
+            "updated": "एक Book [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Book [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Book [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Book"
+            },
+            "name": "Name",
+            "price": "Price",
+            "author": "Author",
+            "released_date": "Released Date",
+            "added_date": "Added Date",
+            "ratings": "Ratings",
+            "description": "Description"
+        }
+    }
+}
