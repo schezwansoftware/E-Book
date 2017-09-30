@@ -5,7 +5,6 @@
         .module('ebookApp', [
             'ngStorage',
             'ngMaterial',
-            'ngSweetAlert2',
             'tmh.dynamicLocale',
             'pascalprecht.translate',
             'ngResource',
