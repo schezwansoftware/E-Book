@@ -87,8 +87,12 @@ public class Book implements Serializable {
         return this;
     }
 
-    public void setReleased_date(LocalDate released_date) {
-        this.released_date = released_date;
+    public void setReleased_date(String released_date) {
+       try {
+           this.released_date =LocalDate.parse(released_date) ;
+       }catch (Exception e){
+           this.released_date=null;
+       }
     }
 
     public LocalDate getAdded_date() {
@@ -100,8 +104,13 @@ public class Book implements Serializable {
         return this;
     }
 
-    public void setAdded_date(LocalDate added_date) {
-        this.added_date = added_date;
+    public void setAdded_date(String added_date) {
+        try {
+            this.added_date =LocalDate.parse(added_date) ;
+        }catch (Exception e){
+            this.added_date=null;
+        }
+
     }
 
     public Integer getRatings() {
