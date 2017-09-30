@@ -1,0 +1,15 @@
+{
+  "name": "allow-root",
+  "homepage": "https://github.com/ericam/true",
+  "version": "3.0.1",
+  "_release": "3.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.1",
+    "commit": "d636e341a0c02d806911f21d479848db24e85739"
+  },
+  "_source": "https://github.com/ericam/true.git",
+  "_target": "^3.0.1",
+  "_originalSource": "true",
+  "_direct": true
+}
