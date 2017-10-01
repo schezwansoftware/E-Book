@@ -11,7 +11,6 @@ import java.util.UUID;
  */
 @Table(name = "book")
 public class Book implements Serializable {
-
     private static final long serialVersionUID = 1L;
     @PartitionKey
     private UUID id;
@@ -78,7 +77,8 @@ public class Book implements Serializable {
         this.author = author;
     }
 
-    public LocalDate getReleased_date() {
+    public LocalDate getReleased_date()
+    {
         return released_date;
     }
 
@@ -89,11 +89,12 @@ public class Book implements Serializable {
 
     public void setReleased_date(String released_date) {
        try {
-           this.released_date =LocalDate.parse(released_date) ;
+           this.released_date =LocalDate.parse(released_date);
        }catch (Exception e){
            this.released_date=null;
        }
     }
+
 
     public LocalDate getAdded_date() {
         return added_date;
@@ -107,10 +108,9 @@ public class Book implements Serializable {
     public void setAdded_date(String added_date) {
         try {
             this.added_date =LocalDate.parse(added_date) ;
-        }catch (Exception e){
-            this.added_date=null;
+        } catch (Exception e) {
+            this.added_date = null;
         }
-
     }
 
     public Integer getRatings() {

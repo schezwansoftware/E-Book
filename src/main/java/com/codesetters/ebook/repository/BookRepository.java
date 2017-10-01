@@ -64,19 +64,18 @@ public class BookRepository {
         if (book.getId()==null){
             book.setId(UUID.randomUUID());
         }
+        System.out.println("DEBUGGING"+book);
         List<Book> books = new ArrayList<>();
         books.add(book);
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<Book> bookJavaRDD = sc.parallelize(books);
         try {
             javaFunctions(bookJavaRDD).writerBuilder(SparkConfiguration.KEYSPACENAME, TABLENAME, mapToRow(Book.class)).saveToCassandra();
-
         }catch (Exception e){
             sc.stop();
         }
         sc.stop();
         return book;
-
     }
 
     public void delete(UUID id) {
