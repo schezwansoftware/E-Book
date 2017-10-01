@@ -77,13 +77,16 @@ public class Book implements Serializable {
         this.author = author;
     }
 
-    public LocalDate getReleased_date()
+    public String getReleased_date()
     {
-        return released_date;
+        if (released_date==null){
+            return null;
+        }
+        return released_date.toString();
     }
 
     public Book released_date(LocalDate released_date) {
-        this.released_date = released_date;
+        this.released_date =released_date ;
         return this;
     }
 
@@ -94,17 +97,17 @@ public class Book implements Serializable {
            this.released_date=null;
        }
     }
-
-
-    public LocalDate getAdded_date() {
-        return added_date;
+    public String getAdded_date() {
+        if (added_date==null){
+            return null;
+        }
+        return added_date.toString();
     }
 
     public Book added_date(LocalDate added_date) {
-        this.added_date = added_date;
+        this.added_date =added_date ;
         return this;
     }
-
     public void setAdded_date(String added_date) {
         try {
             this.added_date =LocalDate.parse(added_date) ;
@@ -112,7 +115,6 @@ public class Book implements Serializable {
             this.added_date = null;
         }
     }
-
     public Integer getRatings() {
         return ratings;
     }

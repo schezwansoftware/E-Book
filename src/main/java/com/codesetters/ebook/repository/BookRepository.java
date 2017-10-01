@@ -64,7 +64,6 @@ public class BookRepository {
         if (book.getId()==null){
             book.setId(UUID.randomUUID());
         }
-        System.out.println("DEBUGGING"+book);
         List<Book> books = new ArrayList<>();
         books.add(book);
         JavaSparkContext sc = new JavaSparkContext(conf);
