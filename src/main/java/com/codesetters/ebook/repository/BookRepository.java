@@ -19,7 +19,6 @@ import java.util.UUID;
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.mapRowTo;
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.mapToRow;
-
 /**
  * Cassandra repository for the Book entity.
  */
@@ -27,13 +26,9 @@ import static com.datastax.spark.connector.japi.CassandraJavaUtil.mapToRow;
 public class BookRepository {
     private transient SparkConf conf;
     private static final String TABLENAME = Book.class.getSimpleName().toLowerCase();
-
     public BookRepository(SparkConfiguration configuration) {
         this.conf=configuration.getDefaultSparkConfiguration();
-
     }
-
-
     public List<Book> findAll() {
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<Book> booksRdd = null;
@@ -46,7 +41,6 @@ public class BookRepository {
         sc.stop();
         return books;
     }
-
     public Book findOne(UUID id) {
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<Book> booksRdd = null;
@@ -59,7 +53,6 @@ public class BookRepository {
         sc.stop();
         return book;
     }
-
     public Book save(Book book) {
         if (book.getId()==null){
             book.setId(UUID.randomUUID());
@@ -76,7 +69,6 @@ public class BookRepository {
         sc.stop();
         return book;
     }
-
     public void delete(UUID id) {
         JavaSparkContext sc = new JavaSparkContext(conf);
         String deleteStatement="DELETE FROM "+SparkConfiguration.KEYSPACENAME+"."+TABLENAME+" where id=" + id + ";";
