@@ -88,7 +88,6 @@ public class BookResource {
     @Timed
     public List<BookDTO> getAllBooks() {
         log.debug("REST request to get all Books");
-        minioService.createMinioObject();
         return bookService.findAll();
         }
 
