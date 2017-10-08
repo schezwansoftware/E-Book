@@ -2,6 +2,7 @@ package com.codesetters.ebook.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.codesetters.ebook.service.BookService;
+import com.codesetters.ebook.service.MinioService;
 import com.codesetters.ebook.web.rest.util.HeaderUtil;
 import com.codesetters.ebook.service.dto.BookDTO;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -29,9 +30,11 @@ public class BookResource {
     private static final String ENTITY_NAME = "book";
 
     private final BookService bookService;
+    private final MinioService minioService;
 
-    public BookResource(BookService bookService) {
+    public BookResource(BookService bookService,MinioService minioService) {
         this.bookService = bookService;
+        this.minioService = minioService;
     }
 
     /**
@@ -85,6 +88,7 @@ public class BookResource {
     @Timed
     public List<BookDTO> getAllBooks() {
         log.debug("REST request to get all Books");
+        minioService.createMinioObject();
         return bookService.findAll();
         }
 
