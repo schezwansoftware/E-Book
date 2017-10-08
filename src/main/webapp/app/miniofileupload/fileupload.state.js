@@ -26,7 +26,7 @@
 
                             }
                         }).result.then(function() {
-                            $state.go('filedashboard', {}, { reload: false });
+                            $state.go('filedashboard', {}, { reload: true });
                         }, function() {
                             $state.go('filedashboard');
                         });

@@ -1,0 +1,60 @@
+<div>
+    <h2 data-translate="ebookApp.fileDashboard.home.title">File Dashboards</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="file-dashboard.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="ebookApp.fileDashboard.home.createLabel">
+                        Create new File Dashboard
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="ebookApp.fileDashboard.filename">Filename</span></th>
+                    <th><span data-translate="ebookApp.fileDashboard.filesize">Filesize</span></th>
+                    <th><span data-translate="ebookApp.fileDashboard.createdby">Createdby</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fileDashboard in vm.fileDashboards track by fileDashboard.id">
+                    <td><a ui-sref="file-dashboard-detail({id:fileDashboard.id})">{{fileDashboard.id}}</a></td>
+                    <td>{{fileDashboard.filename}}</td>
+                    <td>{{fileDashboard.filesize}}</td>
+                    <td>{{fileDashboard.createdby}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="file-dashboard-detail({id:fileDashboard.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="file-dashboard.edit({id:fileDashboard.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="file-dashboard.delete({id:fileDashboard.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

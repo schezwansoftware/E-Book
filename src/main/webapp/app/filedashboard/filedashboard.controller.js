@@ -5,11 +5,14 @@
         .module('ebookApp')
         .controller('FiledashboardController', FiledashboardController);
 
-    FiledashboardController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    FiledashboardController.$inject = ['$scope', 'Principal' , '$state','FileDashboard'];
 
-    function FiledashboardController ($scope, Principal, LoginService, $state) {
+    function FiledashboardController ($scope, Principal, $state,FileDashboard) {
         var vm = this;
 
+        FileDashboard.query(function(result){
+        vm.uploadedFiles=result;
+        });
 
     }
 })();

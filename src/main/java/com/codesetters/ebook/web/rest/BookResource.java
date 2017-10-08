@@ -37,6 +37,8 @@ public class BookResource {
         this.minioService = minioService;
     }
 
+
+
     /**
      * POST  /books : Create a new book.
      *
