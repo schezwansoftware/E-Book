@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider
         .state('fileupload', {
-                    parent: 'app',
+                    parent: 'filedashboard',
                     url: '/fileupload',
                     data: {
                         authorities: ['ROLE_USER']
@@ -26,9 +26,9 @@
 
                             }
                         }).result.then(function() {
-                            $state.go('home', {}, { reload: false });
+                            $state.go('filedashboard', {}, { reload: false });
                         }, function() {
-                            $state.go('home');
+                            $state.go('filedashboard');
                         });
                     }]
                 });
