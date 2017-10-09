@@ -11,6 +11,11 @@ public final class AuthoritiesConstants {
 
     public static final String ANONYMOUS = "ROLE_ANONYMOUS";
 
+    public static final String MINIO_ACCES_KEY="harshitb95";
+
+    public static final String MINIO_SECRET_KEY="Bhatt&191#";
+
+
     private AuthoritiesConstants() {
     }
 }

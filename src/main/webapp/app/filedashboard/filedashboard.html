@@ -1,0 +1,40 @@
+<div>
+    <h2 data-translate="">Dashboard for Uploaded Files</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="fileupload" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="">
+                        Upload a new File
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr>
+                <th><span data-translate="">#</span></th>
+                <th><span data-translate="">File Name</span></th>
+                <th><span data-translate="">Size</span></th>
+                <th><span data-translate="">Created By</span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="file in vm.uploadedFiles" >
+                <td>{{$index+1}}</td>
+                <td>{{file.filename}}</td>
+                <td>{{file.filesize}}</td>
+                <td>{{file.createdby}}</td>
+                <td><button class="btn btn-success"><span class="glyphicon glyphicon-download"></span>&nbsp;Download</button></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
