@@ -22,6 +22,8 @@
                 <th><span data-translate="">Size</span></th>
                 <th><span data-translate="">Created By</span></th>
                 <th></th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -30,7 +32,9 @@
                 <td>{{file.filename}}</td>
                 <td>{{file.filesize}}</td>
                 <td>{{file.createdby}}</td>
-                <td><button class="btn btn-success"><span class="glyphicon glyphicon-download"></span>&nbsp;Download</button></td>
+                <td><button class="btn btn-success" ng-click="vm.downloadFile(file.filename)"><span class="glyphicon glyphicon-download"></span>&nbsp;Download</button></td>
+                <td><button class="btn btn-primary" ng-click="vm.viewFile(file.filename)"><span class="glyphicon glyphicon-asterisk"></span>&nbsp;View</button></td>
+                <td><button class="btn btn-info" ng-click=""><span class="glyphicon glyphicon-share"></span>&nbsp;Share</button></td>
             </tr>
 
             </tbody>

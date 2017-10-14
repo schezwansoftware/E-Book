@@ -5,9 +5,9 @@
         .module('ebookApp')
         .controller('FileUploadController', FileUploadController);
 
-    FileUploadController.$inject = ['$timeout','Upload' ,'$scope', '$stateParams', '$uibModalInstance','AlertService','FileDashboard','Principal'];
+    FileUploadController.$inject = ['$timeout','Upload' ,'$scope', '$state', '$uibModalInstance','AlertService','FileDashboard','Principal'];
 
-    function FileUploadController ($timeout, Upload,$scope, $stateParams, $uibModalInstance,AlertService,FileDashboard,Principal) {
+    function FileUploadController ($timeout, Upload,$scope, $state, $uibModalInstance,AlertService,FileDashboard,Principal) {
               var vm = this;
               vm.clear=clear;
               vm.uploadFile=uploadFile;
@@ -28,6 +28,7 @@
         vm.dashboardObject.filesize=vm.file.size;
         FileDashboard.save(vm.dashboardObject,onsavesuccess,onsaveerror)
         $uibModalInstance.close('success');
+        $state.go('filedashboard', {}, {reload: true});
         }else
         AlertService.error('Failed to upload!!');
         });

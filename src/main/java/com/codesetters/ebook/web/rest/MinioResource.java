@@ -32,18 +32,40 @@ private final MinioService minioService;
     @GetMapping(value = "/downloadfile")
     @Timed
     @ResponseBody
-    public void download(@RequestParam (value="serverfilename") String serverfilename,@RequestParam (value="downloadfilename") String downloadfilename, final HttpServletResponse response) {
-
-        File file = new File("/var/uploads/" + serverfilename);
-        try (InputStream fileInputStream = new FileInputStream(file);
-             OutputStream output = response.getOutputStream();) {
-            response.reset();
-            response.setContentType("application/octet-stream");
-            response.setContentLength((int) (file.length()));
-            response.setHeader("Content-Disposition", "attachment; filename='"+downloadfilename+"'");
-            IOUtils.copyLarge(fileInputStream, output);
-            output.flush();
+    public void download(@RequestParam (value="filename") String filename,final HttpServletResponse response) {
+        InputStream minioStream=minioService.getMinioObject(filename);
+        response.reset();
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-Disposition", "attachment; filename='"+filename+"'");
+        try {
+            OutputStream os=response.getOutputStream();
+            IOUtils.copyLarge(minioStream,os);
+            os.flush();
+            System.out.println("seccess");
         } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("failed");
         }
+
+    }
+
+    @GetMapping(value = "/viewfile")
+    @Timed
+    @ResponseBody
+    public void view(@RequestParam (value="filename") String filename,final HttpServletResponse response) {
+        InputStream minioStream=minioService.getMinioObject(filename);
+        response.reset();
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "attachment; filename='"+filename+"'");
+        try {
+            OutputStream os=response.getOutputStream();
+            IOUtils.copyLarge(minioStream,os);
+            os.flush();
+            System.out.println("seccess");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("failed");
+        }
+
     }
 }
