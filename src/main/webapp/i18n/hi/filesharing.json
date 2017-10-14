@@ -1,0 +1,25 @@
+{
+    "ebookApp": {
+        "filesharing" : {
+            "home": {
+                "title": "Filesharings",
+                "createLabel": "नया Filesharing बनाएँ",
+                "createOrEditLabel": "Filesharing बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Filesharing [identifier: {{ param }}] तैयार है",
+            "updated": "एक Filesharing [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Filesharing [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Filesharing [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Filesharing"
+            },
+            "filename": "Filename",
+            "sharedby": "Sharedby",
+            "sharedto": "Sharedto",
+            "sharedon": "Sharedon",
+            "verified": "Verified"
+        }
+    }
+}

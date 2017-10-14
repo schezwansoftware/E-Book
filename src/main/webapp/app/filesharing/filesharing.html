@@ -1,0 +1,26 @@
+<form ng-submit="vm.shareFile()" name="myform">
+    <div class="modal-header">
+        <h4>Share Files</h4>
+    </div>
+    <jhi-alert></jhi-alert>
+    <div class="modal-body form-group">
+        <label class="control-label">File Name</label>
+        <div>
+            <input type="text"name="filename" class="form-control" ng-model="vm.filename" required>
+            <small style="color:red" ng-show="myform.filename.$touched && myform.filename.$invalid">Input Required</small>
+        </div>
+        <label class="control-label">Share To</label>
+        <div>
+            <input type="text"name="sharedto" class="form-control" ng-model="vm.sharedto" required>
+            <small style="color:red" ng-show="myform.sharedto.$touched && myform.sharedto.$invalid">Input Required</small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="">Cancel</span>
+        </button>
+        <button type="submit"  ng-disabled="myform.$invalid" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="">Share File</span>
+        </button>
+    </div>
+</form>

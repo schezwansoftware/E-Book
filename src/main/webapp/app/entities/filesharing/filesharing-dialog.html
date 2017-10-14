@@ -1,0 +1,59 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFilesharingLabel" data-translate="ebookApp.filesharing.home.createOrEditLabel">Create or edit a Filesharing</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.filesharing.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.filesharing.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.filesharing.filename" for="field_filename">Filename</label>
+            <input type="text" class="form-control" name="filename" id="field_filename"
+                    ng-model="vm.filesharing.filename"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.filesharing.sharedby" for="field_sharedby">Sharedby</label>
+            <input type="text" class="form-control" name="sharedby" id="field_sharedby"
+                    ng-model="vm.filesharing.sharedby"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.filesharing.sharedto" for="field_sharedto">Sharedto</label>
+            <input type="text" class="form-control" name="sharedto" id="field_sharedto"
+                    ng-model="vm.filesharing.sharedto"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.filesharing.sharedon" for="field_sharedon">Sharedon</label>
+                <div class="input-group">
+                    <input id="field_sharedon" type="text" class="form-control" name="sharedon" uib-datepicker-popup="{{dateformat}}" ng-model="vm.filesharing.sharedon" is-open="vm.datePickerOpenStatus.sharedon"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('sharedon')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.filesharing.verified" for="field_verified">Verified</label>
+                <input type="checkbox" name="verified" id="field_verified"
+                          ng-model="vm.filesharing.verified"/>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

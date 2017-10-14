@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="ebookApp.filesharing.home.title">Filesharings</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="filesharing.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="ebookApp.filesharing.home.createLabel">
+                        Create new Filesharing
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="ebookApp.filesharing.filename">Filename</span></th>
+                    <th><span data-translate="ebookApp.filesharing.sharedby">Sharedby</span></th>
+                    <th><span data-translate="ebookApp.filesharing.sharedto">Sharedto</span></th>
+                    <th><span data-translate="ebookApp.filesharing.sharedon">Sharedon</span></th>
+                    <th><span data-translate="ebookApp.filesharing.verified">Verified</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="filesharing in vm.filesharings track by filesharing.id">
+                    <td><a ui-sref="filesharing-detail({id:filesharing.id})">{{filesharing.id}}</a></td>
+                    <td>{{filesharing.filename}}</td>
+                    <td>{{filesharing.sharedby}}</td>
+                    <td>{{filesharing.sharedto}}</td>
+                        <td>{{filesharing.sharedon | date:'mediumDate'}}</td>
+                    <td>{{filesharing.verified}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="filesharing-detail({id:filesharing.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="filesharing.edit({id:filesharing.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="filesharing.delete({id:filesharing.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

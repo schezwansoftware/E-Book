@@ -1,0 +1,25 @@
+{
+    "ebookApp": {
+        "filesharing" : {
+            "home": {
+                "title": "Filesharings",
+                "createLabel": "Create a new Filesharing",
+                "createOrEditLabel": "Create or edit a Filesharing"
+            },
+            "created": "A new Filesharing is created with identifier {{ param }}",
+            "updated": "A Filesharing is updated with identifier {{ param }}",
+            "deleted": "A Filesharing is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Filesharing {{ id }}?"
+            },
+            "detail": {
+                "title": "Filesharing"
+            },
+            "filename": "Filename",
+            "sharedby": "Sharedby",
+            "sharedto": "Sharedto",
+            "sharedon": "Sharedon",
+            "verified": "Verified"
+        }
+    }
+}
