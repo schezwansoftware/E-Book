@@ -13,6 +13,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="" id="bootswatch-css" title="Default">
     <!-- endinject -->
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
@@ -32,8 +33,8 @@
             <!-- Angular views -->
         </div>
 
-        <div class="footer" ng-cloak>
-            <p data-translate="footer">This is your footer</p>
+        <div class="footer">
+            <p translate="footer" class="pull-left">This is your footer</p>
         </div>
     </div>
     <noscript>
@@ -113,6 +114,10 @@
     <script src="app/entities/book/book.state.js"></script>
     <script src="app/entities/book/book.service.js"></script>
     <script src="app/entities/book/book.controller.js"></script>
+    <script src="app/components/bootswatch/bootswatch.service.js"></script>
+    <script src="app/components/bootswatch/bootswatch.state.js"></script>
+    <script src="app/components/bootswatch/bootswatch.controller.js"></script>
+    <script src="app/components/bootswatch/bootswatch.directive.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
     <script src="app/components/util/sort-by.directive.js"></script>
