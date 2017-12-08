@@ -3,12 +3,12 @@
 
     angular
         .module('ebookApp')
-        .factory('Places', Places);
+        .factory('Cities', Cities);
 
-    Places.$inject = ['$resource'];
+    Cities.$inject = ['$resource'];
 
-    function Places ($resource) {
-        var service = $resource('api/Placess/:login', {}, {
+    function Cities ($resource) {
+        var service = $resource('api/city/:countrycode/:state', {}, {
             'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
