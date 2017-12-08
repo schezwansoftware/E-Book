@@ -20,7 +20,7 @@
         <div class="col-lg-12 form-group">
             <label class="control-label col-lg-2" for="country">Country</label>
             <div class="col-lg-3">
-                <select class="form-control" name="country" id="country" ng-options="x for x in vm.countries" ng-model="vm.country" required>
+                <select ng-change="vm.countrySelected()" class="form-control" name="country" id="country" ng-options="x.countrycode as x.countryname for x in vm.countries" ng-model="vm.country" required>
                     <option value="">Select</option>
                 </select>
             <div ng-show="form.country.$touched && form.country.$invalid">
