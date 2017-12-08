@@ -2,40 +2,35 @@
     <jhi-alert></jhi-alert>
     <form role="form" name="form" ng-submit="vm.submitData()" novalidate show-validation>
         <div class="col-lg-12 form-group">
-            <label for="country" class="control-label col-lg-2">Country</label>
+            <label for="postalcode" class="control-label col-lg-2">Zip code</label>
             <div class="col-lg-3">
-                <input id="country" name="country" type="text" class="form-control" ng-model="vm.country" required>
-                <div ng-show="form.country.$touched && form.country.$invalid">
+                <input id="postalcode" type="number" min="0" name="postalcode" class="form-control" ng-model="vm.postalcode" required>
+                <div ng-show="form.postalcode.$touched && form.postalcode.$invalid">
                     <p class="help-block"
-                       ng-show="form.country.$error.required">
-                        Country is required.
+                       ng-show="form.postalcode.$error.required">
+                        Zip code is required.
+                    </p>
+                    <p class="help-block"
+                       ng-show="form.postalcode.$error.min">
+                        Invalid Zip code
                     </p>
                 </div>
             </div>
         </div>
         <div class="col-lg-12 form-group">
-            <label for="state" class="control-label col-lg-2">State</label>
+            <label class="control-label col-lg-2" for="country">Country</label>
             <div class="col-lg-3">
-                <input id="state" name="state" type="text" class="form-control" ng-model="vm.state" required>
-                <div ng-show="form.state.$touched && form.state.$invalid">
-                    <p class="help-block"
-                       ng-show="form.state.$error.required">
-                        State is required.
-                    </p>
-                </div>
+                <select class="form-control" name="country" id="country" ng-options="x for x in vm.countries" ng-model="vm.country" required>
+                    <option value="">Select</option>
+                </select>
+            <div ng-show="form.country.$touched && form.country.$invalid">
+                <p class="help-block"
+                   ng-show="form.country.$error.required">
+                    Country is required.
+                </p>
+            </div>
             </div>
         </div>
-        <div class="col-lg-12 form-group">
-            <label for="city" class="control-label col-lg-2">City</label>
-            <div class="col-lg-3">
-                <input id="city" type="text" name="city" class="form-control" ng-model="vm.city" required>
-                <div ng-show="form.city.$touched && form.city.$invalid">
-                    <p class="help-block"
-                       ng-show="form.city.$error.required">
-                        City is required.
-                    </p>
-                </div>
-            </div>
         </div>
         <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary center-block">Submit</button>
     </form>
