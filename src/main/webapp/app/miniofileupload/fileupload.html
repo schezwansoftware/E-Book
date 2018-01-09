@@ -1,0 +1,28 @@
+<form ng-submit="vm.uploadFile()" name="myform">
+    <div class="modal-header">
+        <h4>Upload Files</h4>
+    </div>
+<jhi-alert></jhi-alert>
+    <div class="modal-body form-group">
+        <label class="control-label">File Name</label>
+        <div>
+            <input type="text"name="filename" class="form-control" ng-model="vm.filename" required>
+            <small style="color:red" ng-show="myform.filename.$touched && myform.filename.$invalid">Input Required</small>
+        </div>
+        <label class="control-label">Select File</label>
+        <div>
+            <input type="file"name="file" ngf-select ngf-max-size="2MB" accept="application/pdf,image/*" ngf-model-invalid="errorFile" required class="form-control" ng-model="vm.file" >
+            <small style="color:red" ng-show="myform.file.$touched && myform.file.$invalid">Input Required</small>
+            <small style="color:red" ng-show="myform.file.$error.maxSize">File too large
+                {{errorFile.size / 1000000|number:1}}MB: max 2M</small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="myform.$invalid" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="">Upload File To Minio</span>
+        </button>
+    </div>
+</form>

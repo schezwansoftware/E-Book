@@ -34,7 +34,7 @@
         <div class="form-group">
             <label class="control-label" data-translate="ebookApp.book.released_date" for="field_released_date">Released Date</label>
                 <div class="input-group">
-                    <input id="field_released_date" type="text" class="form-control" name="released_date" uib-datepicker-popup="{{dateformat}}" ng-model="vm.book.released_date" is-open="vm.datePickerOpenStatus.released_date"
+                    <input id="field_released_date" type="text" class="form-control" name="released_date" uib-datepicker-popup="dd-MM-yyyy" ng-model="vm.book.released_date" is-open="vm.datePickerOpenStatus.released_date"
                     />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('released_date')"><i class="glyphicon glyphicon-calendar"></i></button>

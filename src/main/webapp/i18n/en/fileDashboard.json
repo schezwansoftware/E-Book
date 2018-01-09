@@ -1,0 +1,23 @@
+{
+    "ebookApp": {
+        "fileDashboard" : {
+            "home": {
+                "title": "File Dashboards",
+                "createLabel": "Create a new File Dashboard",
+                "createOrEditLabel": "Create or edit a File Dashboard"
+            },
+            "created": "A new File Dashboard is created with identifier {{ param }}",
+            "updated": "A File Dashboard is updated with identifier {{ param }}",
+            "deleted": "A File Dashboard is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete File Dashboard {{ id }}?"
+            },
+            "detail": {
+                "title": "File Dashboard"
+            },
+            "filename": "Filename",
+            "filesize": "Filesize",
+            "createdby": "Createdby"
+        }
+    }
+}
