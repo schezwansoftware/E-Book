@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "filename",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "filesize",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createdby",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171008173543",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "file_dashboard",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

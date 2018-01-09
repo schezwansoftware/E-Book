@@ -1,0 +1,23 @@
+{
+    "ebookApp": {
+        "fileDashboard" : {
+            "home": {
+                "title": "FileDashboards",
+                "createLabel": "नया File Dashboard बनाएँ",
+                "createOrEditLabel": "File Dashboard बनाएँ या संपादित करें"
+            },
+            "created": "एक नया File Dashboard [identifier: {{ param }}] तैयार है",
+            "updated": "एक File Dashboard [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "File Dashboard [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "File Dashboard [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "File Dashboard"
+            },
+            "filename": "Filename",
+            "filesize": "Filesize",
+            "createdby": "Createdby"
+        }
+    }
+}
