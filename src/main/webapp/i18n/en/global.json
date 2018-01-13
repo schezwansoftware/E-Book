@@ -9,6 +9,7 @@
                 "main": "Entities",
                 "book": "Book",
                 "fileDashboard": "File Dashboard",
+                "userCertificates": "User Certificates",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

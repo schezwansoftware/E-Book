@@ -1,0 +1,22 @@
+{
+    "ebookApp": {
+        "userCertificates" : {
+            "home": {
+                "title": "User Certificates",
+                "createLabel": "Create a new User Certificates",
+                "createOrEditLabel": "Create or edit a User Certificates"
+            },
+            "created": "A new User Certificates is created with identifier {{ param }}",
+            "updated": "A User Certificates is updated with identifier {{ param }}",
+            "deleted": "A User Certificates is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete User Certificates {{ id }}?"
+            },
+            "detail": {
+                "title": "User Certificates"
+            },
+            "userlogin": "Userlogin",
+            "certificateurl": "Certificateurl"
+        }
+    }
+}

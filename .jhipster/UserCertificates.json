@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "userlogin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "certificateurl",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180113115717",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "user_certificates",
+    "pagination": "no"
+}

@@ -1,0 +1,22 @@
+{
+    "ebookApp": {
+        "userCertificates" : {
+            "home": {
+                "title": "UserCertificates",
+                "createLabel": "नया User Certificates बनाएँ",
+                "createOrEditLabel": "User Certificates बनाएँ या संपादित करें"
+            },
+            "created": "एक नया User Certificates [identifier: {{ param }}] तैयार है",
+            "updated": "एक User Certificates [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "User Certificates [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "User Certificates [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "User Certificates"
+            },
+            "userlogin": "Userlogin",
+            "certificateurl": "Certificateurl"
+        }
+    }
+}
