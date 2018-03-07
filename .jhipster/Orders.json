@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "orderid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ordername",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ordertype",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orderby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orderdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "orderattendee",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isassigned",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "orderaddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "delivered",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180307130036",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "orders",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

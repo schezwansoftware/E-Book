@@ -34,7 +34,7 @@
         <div class="form-group">
             <label class="control-label" data-translate="ebookApp.book.released_date" for="field_released_date">Released Date</label>
                 <div class="input-group">
-                    <input id="field_released_date" type="text" class="form-control" name="released_date" uib-datepicker-popup="dd-MM-yyyy" ng-model="vm.book.released_date" is-open="vm.datePickerOpenStatus.released_date"
+                    <input id="field_released_date" type="text" class="form-control" name="released_date" uib-datepicker-popup="{{dateformat}}" ng-model="vm.book.released_date" is-open="vm.datePickerOpenStatus.released_date"
                     />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('released_date')"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -61,6 +61,36 @@
             <label class="control-label" data-translate="ebookApp.book.description" for="field_description">Description</label>
             <input type="text" class="form-control" name="description" id="field_description"
                     ng-model="vm.book.description"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.book.language" for="field_language">Language</label>
+            <input type="text" class="form-control" name="language" id="field_language"
+                    ng-model="vm.book.language"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.book.format" for="field_format">Format</label>
+            <input type="text" class="form-control" name="format" id="field_format"
+                    ng-model="vm.book.format"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.book.isbn_no" for="field_isbn_no">Isbn No</label>
+            <input type="text" class="form-control" name="isbn_no" id="field_isbn_no"
+                    ng-model="vm.book.isbn_no"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.book.ratings_avg" for="field_ratings_avg">Ratings Avg</label>
+            <input type="number" class="form-control" name="ratings_avg" id="field_ratings_avg"
+                    ng-model="vm.book.ratings_avg"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.book.ratings_total" for="field_ratings_total">Ratings Total</label>
+            <input type="number" class="form-control" name="ratings_total" id="field_ratings_total"
+                    ng-model="vm.book.ratings_total"
                     />
         </div>
 

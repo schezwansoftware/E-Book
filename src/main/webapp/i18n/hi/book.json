@@ -21,7 +21,12 @@
             "released_date": "Released Date",
             "added_date": "Added Date",
             "ratings": "Ratings",
-            "description": "Description"
+            "description": "Description",
+            "language": "Language",
+            "format": "Format",
+            "isbn_no": "Isbn No",
+            "ratings_avg": "Ratings Avg",
+            "ratings_total": "Ratings Total"
         }
     }
 }

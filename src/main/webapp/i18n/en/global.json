@@ -9,6 +9,9 @@
                 "main": "Entities",
                 "book": "Book",
                 "fileDashboard": "File Dashboard",
+                "author": "Author",
+                "orders": "Orders",
+                "member": "Member",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

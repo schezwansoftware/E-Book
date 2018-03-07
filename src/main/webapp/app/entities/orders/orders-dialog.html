@@ -1,0 +1,88 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myOrdersLabel" data-translate="ebookApp.orders.home.createOrEditLabel">Create or edit a Orders</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.orders.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.orders.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.orderid" for="field_orderid">Orderid</label>
+            <input type="text" class="form-control" name="orderid" id="field_orderid"
+                    ng-model="vm.orders.orderid"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.ordername" for="field_ordername">Ordername</label>
+            <input type="text" class="form-control" name="ordername" id="field_ordername"
+                    ng-model="vm.orders.ordername"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.ordertype" for="field_ordertype">Ordertype</label>
+            <input type="text" class="form-control" name="ordertype" id="field_ordertype"
+                    ng-model="vm.orders.ordertype"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.orderby" for="field_orderby">Orderby</label>
+            <input type="text" class="form-control" name="orderby" id="field_orderby"
+                    ng-model="vm.orders.orderby"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.orderdate" for="field_orderdate">Orderdate</label>
+                <div class="input-group">
+                    <input id="field_orderdate" type="text" class="form-control" name="orderdate" datetime-picker="{{dateformat}}" ng-model="vm.orders.orderdate" is-open="vm.datePickerOpenStatus.orderdate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('orderdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.orderattendee" for="field_orderattendee">Orderattendee</label>
+            <input type="text" class="form-control" name="orderattendee" id="field_orderattendee"
+                    ng-model="vm.orders.orderattendee"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.isassigned" for="field_isassigned">Isassigned</label>
+                <input type="checkbox" name="isassigned" id="field_isassigned"
+                          ng-model="vm.orders.isassigned"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.orderaddress" for="field_orderaddress">Orderaddress</label>
+            <input type="text" class="form-control" name="orderaddress" id="field_orderaddress"
+                    ng-model="vm.orders.orderaddress"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.delivered" for="field_delivered">Delivered</label>
+                <input type="checkbox" name="delivered" id="field_delivered"
+                          ng-model="vm.orders.delivered"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ebookApp.orders.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.orders.description"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

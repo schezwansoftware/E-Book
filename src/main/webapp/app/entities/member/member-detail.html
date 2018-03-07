@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="ebookApp.member.detail.title">Member</span> {{vm.member.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ebookApp.member.name">Name</span></dt>
+        <dd>
+            <span>{{vm.member.name}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.member.member_login">Member Login</span></dt>
+        <dd>
+            <span>{{vm.member.member_login}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.member.member_email">Member Email</span></dt>
+        <dd>
+            <span>{{vm.member.member_email}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.member.join_date">Join Date</span></dt>
+        <dd>
+            <span>{{vm.member.join_date | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ebookApp.member.memeber_type">Memeber Type</span></dt>
+        <dd>
+            <span>{{vm.member.memeber_type}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="member-detail.edit({id:vm.member.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "biography",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "genre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ratings_total",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "ratings_avg",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "ratings",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180307125433",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "author",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

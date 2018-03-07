@@ -111,6 +111,11 @@
                                 added_date: null,
                                 ratings: null,
                                 description: null,
+                                language: null,
+                                format: null,
+                                isbn_no: null,
+                                ratings_avg: null,
+                                ratings_total: null,
                                 id: null
                             };
                         }

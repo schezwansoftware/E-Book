@@ -29,6 +29,26 @@
         {
             "fieldName": "description",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "language",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "format",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isbn_no",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ratings_avg",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "ratings_total",
+            "fieldType": "Double"
         }
     ],
     "changelogDate": "20170923122754",

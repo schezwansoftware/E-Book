@@ -1,0 +1,25 @@
+{
+    "ebookApp": {
+        "member" : {
+            "home": {
+                "title": "Members",
+                "createLabel": "नया Member बनाएँ",
+                "createOrEditLabel": "Member बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Member [identifier: {{ param }}] तैयार है",
+            "updated": "एक Member [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Member [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Member [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Member"
+            },
+            "name": "Name",
+            "member_login": "Member Login",
+            "member_email": "Member Email",
+            "join_date": "Join Date",
+            "memeber_type": "Memeber Type"
+        }
+    }
+}

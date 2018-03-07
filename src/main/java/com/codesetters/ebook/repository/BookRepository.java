@@ -1,84 +1,93 @@
 package com.codesetters.ebook.repository;
 
-import com.codesetters.ebook.config.SparkConfiguration;
 import com.codesetters.ebook.domain.Book;
-import com.datastax.spark.connector.cql.CassandraConnector;
-import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
 import org.springframework.stereotype.Repository;
 
 import com.datastax.driver.core.*;
+import com.datastax.driver.mapping.Mapper;
+import com.datastax.driver.mapping.MappingManager;
 
-import javax.annotation.PostConstruct;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Validator;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
-import static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;
-import static com.datastax.spark.connector.japi.CassandraJavaUtil.mapRowTo;
-import static com.datastax.spark.connector.japi.CassandraJavaUtil.mapToRow;
 /**
  * Cassandra repository for the Book entity.
  */
 @Repository
 public class BookRepository {
-    private transient SparkConf conf;
-    private static final String TABLENAME = Book.class.getSimpleName().toLowerCase();
-    public BookRepository(SparkConfiguration configuration) {
-        this.conf=configuration.getDefaultSparkConfiguration();
+
+    private final Session session;
+
+    private final Validator validator;
+
+    private Mapper<Book> mapper;
+
+    private PreparedStatement findAllStmt;
+
+    private PreparedStatement truncateStmt;
+
+    public BookRepository(Session session, Validator validator) {
+        this.session = session;
+        this.validator = validator;
+        this.mapper = new MappingManager(session).mapper(Book.class);
+        this.findAllStmt = session.prepare("SELECT * FROM book");
+        this.truncateStmt = session.prepare("TRUNCATE book");
     }
+
     public List<Book> findAll() {
-        JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<Book> booksRdd = null;
-        try {
-            booksRdd = javaFunctions(sc).cassandraTable(SparkConfiguration.KEYSPACENAME, TABLENAME, mapRowTo(Book.class));
-        } catch (Exception e) {
-            sc.stop();
-        }
-        List<Book> books = booksRdd != null ? booksRdd.collect() : null;
-        sc.stop();
-        return books;
+        List<Book> booksList = new ArrayList<>();
+        BoundStatement stmt = findAllStmt.bind();
+        session.execute(stmt).all().stream().map(
+            row -> {
+                Book book = new Book();
+                book.setId(row.getUUID("id"));
+                book.setName(row.getString("name"));
+                book.setPrice(row.getInt("price"));
+                book.setAuthor(row.getString("author"));
+                book.setReleased_date(row.get("released_date", LocalDate.class));
+                book.setAdded_date(row.get("added_date", LocalDate.class));
+                book.setRatings(row.getInt("ratings"));
+                book.setDescription(row.getString("description"));
+                book.setLanguage(row.getString("language"));
+                book.setFormat(row.getString("format"));
+                book.setIsbn_no(row.getString("isbn_no"));
+                book.setRatings_avg(row.getDouble("ratings_avg"));
+                book.setRatings_total(row.getDouble("ratings_total"));
+                return book;
+            }
+        ).forEach(booksList::add);
+        return booksList;
     }
+
     public Book findOne(UUID id) {
-        JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<Book> booksRdd = null;
-        try {
-            booksRdd = javaFunctions(sc).cassandraTable(SparkConfiguration.KEYSPACENAME, TABLENAME, mapRowTo(Book.class)).where("id="+id);
-        } catch (Exception e) {
-            sc.stop();
-        }
-        Book book = booksRdd != null ? booksRdd.first() : null;
-        sc.stop();
-        return book;
+        return mapper.get(id);
     }
+
     public Book save(Book book) {
-        if (book.getId()==null){
+        if (book.getId() == null) {
             book.setId(UUID.randomUUID());
         }
-        List<Book> books = new ArrayList<>();
-        books.add(book);
-        JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<Book> bookJavaRDD = sc.parallelize(books);
-        try {
-            javaFunctions(bookJavaRDD).writerBuilder(SparkConfiguration.KEYSPACENAME, TABLENAME, mapToRow(Book.class)).saveToCassandra();
-        }catch (Exception e){
-            sc.stop();
+        Set<ConstraintViolation<Book>> violations = validator.validate(book);
+        if (violations != null && !violations.isEmpty()) {
+            throw new ConstraintViolationException(violations);
         }
-        sc.stop();
+        mapper.save(book);
         return book;
     }
+
     public void delete(UUID id) {
-        JavaSparkContext sc = new JavaSparkContext(conf);
-        String deleteStatement="DELETE FROM "+SparkConfiguration.KEYSPACENAME+"."+TABLENAME+" where id=" + id + ";";
-        CassandraConnector connector=CassandraConnector.apply(sc.getConf());
-        Session session=connector.openSession();
-        session.execute(deleteStatement);
-        sc.stop();
+        mapper.delete(id);
     }
 
     public void deleteAll() {
-
+        BoundStatement stmt = truncateStmt.bind();
+        session.execute(stmt);
     }
 }

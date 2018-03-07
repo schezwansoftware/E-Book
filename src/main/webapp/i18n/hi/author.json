@@ -1,0 +1,26 @@
+{
+    "ebookApp": {
+        "author" : {
+            "home": {
+                "title": "Authors",
+                "createLabel": "नया Author बनाएँ",
+                "createOrEditLabel": "Author बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Author [identifier: {{ param }}] तैयार है",
+            "updated": "एक Author [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Author [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Author [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Author"
+            },
+            "name": "Name",
+            "biography": "Biography",
+            "genre": "Genre",
+            "ratings_total": "Ratings Total",
+            "ratings_avg": "Ratings Avg",
+            "ratings": "Ratings"
+        }
+    }
+}

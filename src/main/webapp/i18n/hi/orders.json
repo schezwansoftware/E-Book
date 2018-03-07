@@ -1,0 +1,30 @@
+{
+    "ebookApp": {
+        "orders" : {
+            "home": {
+                "title": "Orders",
+                "createLabel": "नया Orders बनाएँ",
+                "createOrEditLabel": "Orders बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Orders [identifier: {{ param }}] तैयार है",
+            "updated": "एक Orders [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Orders [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Orders [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Orders"
+            },
+            "orderid": "Orderid",
+            "ordername": "Ordername",
+            "ordertype": "Ordertype",
+            "orderby": "Orderby",
+            "orderdate": "Orderdate",
+            "orderattendee": "Orderattendee",
+            "isassigned": "Isassigned",
+            "orderaddress": "Orderaddress",
+            "delivered": "Delivered",
+            "description": "Description"
+        }
+    }
+}

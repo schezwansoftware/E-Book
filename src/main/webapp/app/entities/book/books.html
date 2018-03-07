@@ -26,6 +26,11 @@
                     <th><span data-translate="ebookApp.book.added_date">Added Date</span></th>
                     <th><span data-translate="ebookApp.book.ratings">Ratings</span></th>
                     <th><span data-translate="ebookApp.book.description">Description</span></th>
+                    <th><span data-translate="ebookApp.book.language">Language</span></th>
+                    <th><span data-translate="ebookApp.book.format">Format</span></th>
+                    <th><span data-translate="ebookApp.book.isbn_no">Isbn No</span></th>
+                    <th><span data-translate="ebookApp.book.ratings_avg">Ratings Avg</span></th>
+                    <th><span data-translate="ebookApp.book.ratings_total">Ratings Total</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -39,6 +44,11 @@
                         <td>{{book.added_date | date:'mediumDate'}}</td>
                     <td>{{book.ratings}}</td>
                     <td>{{book.description}}</td>
+                    <td>{{book.language}}</td>
+                    <td>{{book.format}}</td>
+                    <td>{{book.isbn_no}}</td>
+                    <td>{{book.ratings_avg}}</td>
+                    <td>{{book.ratings_total}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

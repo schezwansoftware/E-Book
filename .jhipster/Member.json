@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "member_login",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "member_email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "join_date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "memeber_type",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180307130432",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "member",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

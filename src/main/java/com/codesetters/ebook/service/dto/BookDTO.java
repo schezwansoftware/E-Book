@@ -1,8 +1,8 @@
 package com.codesetters.ebook.service.dto;
 
 
-import java.io.Serializable;
 import java.time.LocalDate;
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -26,6 +26,16 @@ public class BookDTO implements Serializable {
     private Integer ratings;
 
     private String description;
+
+    private String language;
+
+    private String format;
+
+    private String isbn_no;
+
+    private Double ratings_avg;
+
+    private Double ratings_total;
 
     public UUID getId() {
         return id;
@@ -91,6 +101,46 @@ public class BookDTO implements Serializable {
         this.description = description;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    public String getIsbn_no() {
+        return isbn_no;
+    }
+
+    public void setIsbn_no(String isbn_no) {
+        this.isbn_no = isbn_no;
+    }
+
+    public Double getRatings_avg() {
+        return ratings_avg;
+    }
+
+    public void setRatings_avg(Double ratings_avg) {
+        this.ratings_avg = ratings_avg;
+    }
+
+    public Double getRatings_total() {
+        return ratings_total;
+    }
+
+    public void setRatings_total(Double ratings_total) {
+        this.ratings_total = ratings_total;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -123,6 +173,11 @@ public class BookDTO implements Serializable {
             ", added_date='" + getAdded_date() + "'" +
             ", ratings='" + getRatings() + "'" +
             ", description='" + getDescription() + "'" +
+            ", language='" + getLanguage() + "'" +
+            ", format='" + getFormat() + "'" +
+            ", isbn_no='" + getIsbn_no() + "'" +
+            ", ratings_avg='" + getRatings_avg() + "'" +
+            ", ratings_total='" + getRatings_total() + "'" +
             "}";
     }
 }
