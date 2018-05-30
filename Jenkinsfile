@@ -38,7 +38,7 @@ node {
     }
 
     stage('publish docker') {
-        docker.withRegistry('https://registry.hub.docker.com', 'harshitb95') {
+        docker.withRegistry('http://localhost:5000', '') {
             dockerImage.push 'latest'
         }
     }
